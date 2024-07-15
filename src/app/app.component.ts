@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FirstEvoApp';
+  array_cars = [{name: "Car_1"},{name: "Car_2"},{name: "Car_3"},{name: "Car_4"}];
+  date_now = new Date();
+  item = 1;
+  
 }
