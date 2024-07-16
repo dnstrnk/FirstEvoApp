@@ -2,6 +2,6 @@
     <li [id]="car.name" *ngFor="let car of array_cars">{{car.name}}</li>
 </ul>
 
-<p>{{date_now | date: 'dd.MM.yyyy'}}</p>
+<p>{{date_now | date: 'dd/MM/yyyy'}}</p>
 <p>Значение переменной item {{item}}</p>
 <p>Значение после форматирования  {{item | stringpipe}}</p>
