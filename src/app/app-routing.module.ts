@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ItemComponent } from './page/item/item.component';
 
 const routes: Routes = [
   {
-    path: 'item', loadChildren: () => import('./page/item/item.component').then(m => m.ItemComponent)
+    path: 'item', loadChildren: () => import('./page/page.module').then(m => m.PageModule)
   }
 ];
 
