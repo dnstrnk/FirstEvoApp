@@ -15,9 +15,7 @@ export class AppComponent {
   intervalSubsR$!: Subscription;
   getCounter() {
     const intervalStream$ = interval(2000);
-    this.intervalSubs$ = intervalStream$.subscribe((value) => {
-      this.array.push(value);
-    });
+    this.intervalSubs$ = intervalStream$.subscribe((value) => {this.array.push(value);});
   }
   stopSubs() {
     this.intervalSubs$.unsubscribe();
@@ -28,6 +26,10 @@ export class AppComponent {
   }
   stopSubsR() {
     this.intervalSubsR$.unsubscribe();
+  }
+  stopSubsAll() {
+    this.stopSubs();
+    this.stopSubsR();
   }
   getCounterAll() {
     this.getCounter();
