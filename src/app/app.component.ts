@@ -9,7 +9,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'FirstEvoApp';
-  constructor(private dataService: DataService) {}
+  constructor(public dataService: DataService) {}
   exampleOneF() {
     this.dataService.exampleOne().subscribe({
       next: (response:any) => {console.log(response);}

@@ -1,9 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-page',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.css']
 })
-export class PageComponent {
+export class PageComponent implements OnInit {
+
+  constructor(public route: ActivatedRoute, private router: Router) { }
+
+  ngOnInit() {
+    this.route.data.subscribe(
+      response => {})
+  }
+
 }
