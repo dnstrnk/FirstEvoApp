@@ -1,7 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
+import { PreFetchingResolver } from './pre-fetching.resolver';
+import { PageComponent } from './page/page.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: AppComponent
+  },
+  {
+    path: 'page',
+    component: PageComponent,
+    resolve: [PreFetchingResolver]
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
