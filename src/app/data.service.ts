@@ -26,6 +26,6 @@ export class DataService {
     return this.http.delete('https://jsonplaceholder.typicode.com/posts/1')
   }
   exampleSeven() {
-    return this.http.get('https://jsonplaceholder.typicode.com/posts')
+    return this.http.get('https://jsonplaceholder.typicode.com/posts/1',{responseType: 'text'})
   }
 }
