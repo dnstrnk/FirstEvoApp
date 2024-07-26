@@ -1,6 +1,5 @@
 import { Component, VERSION } from '@angular/core';
-import { Observable, Subscription, interval } from 'rxjs';
-import { CounterService } from './counter.service';
+import { Observable, Subscription, interval, map } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,20 +8,29 @@ import { CounterService } from './counter.service';
 })
 export class AppComponent {
   title = 'FirstEvoApp';
-  constructor(public counterService: CounterService) {}
-  
-  counterSubs$!: Subscription;
-  enableStopButton = false;
-
+  array:number [] = [];
+  arrayR:any [] = [];
+  constructor() {}
+  intervalSubs$!: Subscription;
+  intervalSubsR$!: Subscription;
   getCounter() {
-    this.counterSubs$ = this.counterService.setCounter().subscribe((next) => {
-      console.log(next);
+    const intervalStream$ = interval(2000);
+    this.intervalSubs$ = intervalStream$.subscribe((value) => {
+      this.array.push(value);
     });
-    this.enableStopButton = true;
   }
-
   stopSubs() {
-    this.counterSubs$.unsubscribe();
-    this.enableStopButton = false
+    this.intervalSubs$.unsubscribe();
+  }
+  getCounterR() {
+    const intervalStreamR$ = interval(2000);
+    this.intervalSubsR$ = intervalStreamR$.pipe(map(value => `Random Value: ${Math.floor(Math.random() * 1000)}`)).subscribe((value) => {this.arrayR.push(value);});
+  }
+  stopSubsR() {
+    this.intervalSubsR$.unsubscribe();
+  }
+  getCounterAll() {
+    this.getCounter();
+    this.getCounterR();
   }
 }
