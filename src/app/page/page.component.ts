@@ -7,12 +7,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./page.component.css']
 })
 export class PageComponent implements OnInit {
-
+  param:any;
   constructor(public route: ActivatedRoute, private router: Router) { }
-
+  
   ngOnInit() {
     this.route.data.subscribe(
-      response => {})
+      response => {this.param = response[0]})
   }
-
 }

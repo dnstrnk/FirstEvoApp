@@ -5,10 +5,7 @@ import { PreFetchingResolver } from './pre-fetching.resolver';
 import { PageComponent } from './page/page.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: AppComponent
-  },
+  
   {
     path: 'page',
     component: PageComponent,
