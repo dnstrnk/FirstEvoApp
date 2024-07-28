@@ -1,0 +1,10 @@
+<p>Выполнено: ({{ uncheckedTodos | async }})</p>
+<hr>
+<ul *ngIf="(todos | async)">
+  <li class="todo-item" [class.done]="todo.done" *ngFor="let todo of todos | async">
+    <input type="checkbox" [checked]="todo.done" (change)="toggleTodo(todo)">
+    <i class="trash" (click)="deleteTodo(todo)"></i>
+    <span>{{todo.description}}</span>
+  </li>
+</ul>
+<hr>

@@ -1,0 +1,12 @@
+<div class="col-md-12">
+  <form [formGroup]="todoForm" (submit)="submitTodo()">
+    <div class="row">
+      <div class="col-md-9">
+        <input class="form-control" placeholder="Что нужно сделать?" type="text" id="description" formControlName="descriptionCtrl">
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-primary" type="submit">Создать</button>
+      </div>
+    </div>
+  </form>
+</div>
