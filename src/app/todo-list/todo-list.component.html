@@ -1,4 +1,4 @@
-<p>Выполнено: ({{ uncheckedTodos | async }})</p>
+<p>Не выполнено: ({{ uncheckedTodos | async }})</p>
 <hr>
 <ul *ngIf="(todos | async)">
   <li class="todo-item" [class.done]="todo.done" *ngFor="let todo of todos | async">
