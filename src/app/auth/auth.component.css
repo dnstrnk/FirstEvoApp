@@ -98,3 +98,7 @@
     font-weight: 500;
     
 }
+.auth[disabled=disabled],
+.auth[disabled]{
+  background-color: rgba(58, 51, 149, 0.3)!important;
+}

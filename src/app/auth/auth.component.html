@@ -4,15 +4,24 @@
         <div class="col-4">
             <div class="wrap">
                 <div class="auth-box">
-                    <p class="login">Логин</p>
-                    <input type="text" class="login-input">
+                    <p class="form-label login">Логин</p>
+                    <input required pattern="[a-zA-Z0-9]*" type="text" class="login-input form-control" #username="ngModel" name="username" [(ngModel)]="create_data.username">
+                    <div *ngIf="username.invalid && (username.dirty || username.touched)">
+                        <div *ngIf="username.hasError('required')" class="alert alert-danger mt-2" role="alert">Поле должно быть заполнено</div>
+                        <div *ngIf="username.hasError('pattern')" class="alert alert-danger mt-2" role="alert">Поле не должно содержать пробелов, кирилицу или спец символы</div>
+                    </div>
                     <p class="password">Пароль</p>
-                    <input type="password" class="password-input">
+                    <input required pattern="[a-zA-Z0-9]*" minlength="4" type="password" class="password-input form-control" #password="ngModel" name="password" [(ngModel)]="create_data.password">
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                        <div *ngIf="password.hasError('minlength')" class="alert alert-danger mt-2" role="alert">Минимальная длина должна быть больше 4 символов</div>
+                        <div *ngIf="password.hasError('required')" class="alert alert-danger mt-2" role="alert">Поле должно быть заполнено</div>
+                        <div *ngIf="password.hasError('pattern')" class="alert alert-danger mt-2" role="alert">Поле не должно содержать пробелов, кирилицу или спец символы</div>
+                    </div>
                     <div class="quick-block align-items-center d-flex justify-content-between">
                         <label class="quick-span"><input type="checkbox" class="quick-check" name="Быстрая сессия" id="">Быстрая сессия</label>
                         <button routerLink="/registration" class="reg">Зарегистрироваться</button>
                     </div>
-                    <button class="auth">Вход</button>
+                    <button [disabled]="username.invalid || password.invalid" (click)="createData()" class="auth">Вход</button>
                     <p class="line">Или войти через</p>
                     <button class="auth-github"><img class="auth-github_image" src="../../assets/svg/github.svg" alt=""></button>
                 </div>

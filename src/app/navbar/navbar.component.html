@@ -9,8 +9,8 @@
                 <li><a routerLink="/recipes">Каталог рецептов</a></li>
             </ul>
             <ul class="nav_block-two col d-flex justify-content-right">
-                <li class="nav_block-two_edit"><a class="" href=""></a></li>
-                <li class="nav_block-two_profile">
+                <li *ngIf="isLogged" class="nav_block-two_edit"><a class="" href=""></a></li>
+                <li *ngIf="isLogged" class="nav_block-two_profile">
                     <button>
                         <img src="" alt="">
                         <div class="nav_block-two_profile-data">
@@ -18,7 +18,7 @@
                             <p class="profile-data_type">User</p>
                         </div>
                     </button>
-                <li class="nav_block-two_button"><a routerLink='/authorization'>Вход в аккаунт</a></li>
+                <li *ngIf="!isLogged" class="nav_block-two_button"><a routerLink='/authorization'>Вход в аккаунт</a></li>
             </ul>
         </div>
     </div>

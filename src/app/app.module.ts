@@ -22,6 +22,8 @@ import { AdminrecipesComponent } from './adminrecipes/adminrecipes.component';
 import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
+import { AuthState } from '../store/auth.state';
+
 import { NgxsModule } from '@ngxs/store';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
@@ -51,7 +53,7 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
     HttpClientModule,
     FormsModule,
     CarouselModule.forRoot(),
-    NgxsModule.forRoot([]),
+    NgxsModule.forRoot([AuthState]),
     NgxsLoggerPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot()
   ],

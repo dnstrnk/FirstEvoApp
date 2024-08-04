@@ -14,4 +14,7 @@ export class DataService {
   getRecipe(urlId:string) {
     return this.http.get(`https://evo-academy.wckz.dev/api/cooking-blog/posts/${urlId}`, {responseType: 'json'})
   }
+  auth(username:any, password:any) {
+    return this.http.post('https://evo-academy.wckz.dev/api/cooking-blog/users/sign',{"username": username,"password": password},{responseType: 'json'})
+  }
 }
