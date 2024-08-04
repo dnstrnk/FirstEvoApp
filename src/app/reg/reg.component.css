@@ -1,0 +1,100 @@
+.wrap {
+    margin: 32px 0 146px;
+}
+.wrap button {
+    border: unset;
+    background-color: unset;
+    padding: 0;
+    border-radius: 6px;
+}
+.wrap input {
+    border-color:#D1D5DB;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 24px;
+}
+.wrap input:focus-visible {
+    outline-color: rgba(58, 51, 149, 1);
+}
+.heading {
+    color: #111827;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 100px;
+}
+.auth-box {
+    border-radius: 8px;
+    padding: 32px 40px;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+}
+.login, .password {
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: #374151;
+    line-height: 20px;
+    font-weight: 500;
+}
+.login-input, .password-input{
+    padding-left: 10px;
+}
+.auth {
+    color: #fff;
+    background-color: rgba(58, 51, 149, 1)!important;
+}
+.auth-github {
+    
+}
+.auth, .auth-github {
+    height: 38px;
+    padding: 9px 0;
+    width: 100%;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+}
+.line {
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    color: #6B7280;
+    margin: 24px 0;
+    position: relative;
+}
+.line:before, .line::after {
+    content: '';
+    width: 100px;
+    height: 1px;
+    background-color: #D1D5DB;
+    position: absolute;
+    top: 10px;
+}
+.line:before {
+    left: 0;
+
+} 
+.line::after {
+    right: 0;
+}
+.quick-check {
+    width: 16px!important;
+}
+.quick-block {
+    height: 20px;
+    margin-bottom: 24px;
+}
+.quick-span {
+    display: inline-block;
+    line-height: 20px;
+    height: 20px;
+    color: #111827;
+    font-size: 14px;
+}
+.reg {
+    display: inline-block;
+    height: 20px;
+    color: rgba(58, 51, 149, 1);
+    font-size: 14px;
+    font-weight: 500;
+    
+}

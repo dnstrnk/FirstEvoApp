@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <p class="heading">Каталог рецептов</p>
+        </div>
+        <div class="col-3" *ngFor="let listrecipe of this.param; let i = 'index';">
+            <button routerLink="/recipe/{{this.param[i].id}}" type="button" class="recipe">
+                <img class="recipe-img" src="{{this.param[i].image}}" alt="logo">
+                <p class="recipe-name">{{this.param[i].title}}</p>
+                <div class="recipe-info d-flex justify-content-between">
+                    <span class="recipe-time">{{this.param[i].timeCooking}} Минут</span>
+                    <span class="recipe-type">{{this.param[i].tags}}</span>
+                </div>
+            </button>
+        </div>
+    </div>
+</div>

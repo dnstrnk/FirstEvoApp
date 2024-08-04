@@ -1,0 +1,115 @@
+.container {
+    
+}
+p {
+    padding: 0;
+    margin: 0;
+}
+.recipe {
+    margin-top: 100px;
+    margin-bottom: 150px;
+    height: 640px;
+    background-color: #E7FAFE;
+    border-radius: 50px;
+}
+.recipe-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #000;
+    line-height: 73px;
+    height: 146px;
+    margin-bottom: 0;
+}
+.recipe-body {
+    margin: 30px 0;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 16px;
+    line-height: 28px;
+    height: 210px;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.recipe-time {
+
+}
+.recipe-tags {
+    margin-left: 16px;
+}
+.recipe-time, .recipe-tags {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 30px;
+    padding: 10px 20px;
+    padding-left: 50px;
+    position: relative;
+    height: 40px;
+    display: inline-block;
+    line-height: 20px;
+}
+.recipe-time::before, 
+.recipe-tags::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+}
+.recipe-time::before {
+    background-image: url(../../assets/svg/time.svg);
+}
+.recipe-tags::before {
+    background-image: url(../../assets/svg/ForkKnife.svg);
+}
+.block-one {
+    padding: 45px 50px 50px;
+}
+.block-two {
+    height: 640px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+    position: relative;
+}
+.profile {
+    height: 50px;
+    position: relative;
+    padding-left: 65px;
+}
+.profile-wrap {
+    margin-top: 30px;
+}
+.profile-logo {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.profile-image {
+    height: 100%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    
+}
+.profile-link {
+    border: unset;
+    background-color: #3A3395;
+    border-radius: 15px;
+    color: #fff;
+    padding: 18px 36px;
+    padding-right: 60px;
+    line-height: 24px;
+    position: relative;
+}
+.profile-link::after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 18px;
+    right: 30px;
+    background-image: url(../../assets/svg/PlayCircle.svg);
+}

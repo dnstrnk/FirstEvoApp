@@ -1,0 +1,30 @@
+<div class="container">
+    <carousel [pauseOnFocus]="true" [noPause]="false" [isAnimated]="true" [interval]="myInterval" [showIndicators]="false">
+        <slide class="" *ngFor="let listrecipe of this.param; let i = 'index';">
+            <div class="recipe">
+                <div class="row">
+                    <div class="col-6 block-one">
+                        <p class="recipe-title">{{this.param[i].title}}</p>
+                        <p class="recipe-body">{{this.param[i].body}}</p>
+                        <span class="recipe-time">{{this.param[i].timeCooking}} Минут</span>
+                        <span class="recipe-tags" *ngFor="let tagrecipe of this.param[i].tags">{{tagrecipe}}</span>
+                        <div class="profile-wrap d-flex justify-content-between">
+                            <div class="profile">
+                                <img class="profile-logo" src="{{this.param[i].author.avatar}}" alt="">
+                                <p class="profile-name" class="">{{this.param[i].author.firstName}} {{this.param[i].author.lastName}}</p>
+                                <p class="profile-date" class="">{{this.param[i].updatedOn.slice(0,10)}}</p>
+                            </div>
+                            <button routerLink="/recipe/{{this.param[i].id}}" class="profile-link">Посмотреть</button>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="block-two">
+                            <img class="profile-image" src="{{this.param[i].image}}" alt="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </slide>
+    </carousel>
+</div>
+

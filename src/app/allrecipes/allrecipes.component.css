@@ -1,0 +1,72 @@
+.container {
+}
+.row {}
+.heading {
+    text-align: center;
+    padding: 0;
+    margin: 100px 0 80px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #000;
+}
+.recipe {
+    border: unset;
+    padding: 0;
+    background-color: unset;
+    text-align: left;
+    width: 100%;
+}
+.recipe-img {
+    display: block;
+    width: 302px;
+    height: 220px;
+    object-position: 50% 50%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.recipe-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    text-align: left;
+    margin: 16px 0 24px 0;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+span {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    height: 24px;
+    
+}
+span::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-image: url(../../assets/svg/time.svg);
+}
+.recipe-time::before {
+    background-image: url(../../assets/svg/time.svg);
+}
+.recipe-type::before {
+    background-image: url(../../assets/svg/ForkKnife.svg);
+}
+.recipe-time {
+    padding-left: 34px;
+}
+.recipe-type {
+    padding-left: 34px;
+}
+.recipe-info {
+    height: 24px;
+    margin-bottom: 40px;
+}

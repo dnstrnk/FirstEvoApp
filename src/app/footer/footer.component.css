@@ -1,0 +1,21 @@
+.container {
+}
+.wrap-outside {
+    border-top: 1px #DDDDDD solid;
+}
+.wrap-inside {
+    padding: 48px 32px;
+}
+.copyright {
+    color: #9CA3AF;
+    font-size: 16px;
+}
+.links a{
+    margin-left: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: top;
+}
+.links img {
+    vertical-align: top;
+}

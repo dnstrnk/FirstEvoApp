@@ -1,0 +1,113 @@
+<div class="container">
+    <div class="row wrap-heading">
+        <div class="col-8">
+            <p class="heading">{{this.param.title}}</p>
+            <div class="heading-info d-flex justify-content-between">
+                <div class="author d-flex justify-content-between">
+                    <img class="author-img" src="{{this.param.author.avatar}}" alt="img">
+                    <div class="autor-div">
+                        <p class="author-name">{{this.param.author.firstName}} {{this.param.author.lastName}}</p>
+                        <p class="author-date">{{this.param.updatedOn.slice(0,10)}}</p>
+                    </div>
+                </div>
+                <div class="time">
+                    <p class="time-heading">ВРЕМЯ ПРИГОТОВЛЕНИЯ</p>
+                    <p class="time-data">{{this.param.timeCooking}} минут</p>
+                </div>
+                <div class="ingredients">
+                    <p class="tags">{{this.param.tags}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="addition-button">
+                <button class="but-style but-one"><div class="but-wrap"><img class="but-img" src="../../../assets/svg/star.svg" alt=""></div>В ИЗБРАННОЕ</button>
+                <button class="but-style but-two"><div class="but-wrap"><img class="but-img" src="../../../assets/svg/printer.svg" alt=""></div>РАСПЕЧАТАТЬ</button>
+                <button class="but-style but-three"><div class="but-wrap"><img class="but-img" src="../../../assets/svg/share.svg" alt=""></div>ПОДЕЛИТЬСЯ</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <div class="wrap recipe-img">
+                <img class="recipe-logo" src="{{this.param.image}}" alt="recipe-logo">
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="wrap wrap-foodvalue">
+                <p class="heading-text">Пищевая ценность</p>
+                <div class="foodValue d-flex justify-content-between">
+                    <span class="calories fvtype">Калории</span>
+                    <span class="calories-value fvtypeb">{{this.param.foodValue.calories}} ккал</span>
+                </div>
+                <div class="foodValue d-flex justify-content-between">
+                    <span class="carbohydrates fvtype">Углеводы</span>
+                    <span class="carbohydrates-value fvtypeb">{{this.param.foodValue.carbohydrates}} г</span>
+                </div>
+                <div class="foodValue d-flex justify-content-between">
+                    <span class="fats fvtype">Жиры</span>
+                    <span class="fats-value fvtypeb">{{this.param.foodValue.fats}} г</span>
+                </div>
+                <div class="foodValue d-flex justify-content-between">
+                    <span class="proteins fvtype">Белки</span>
+                    <span class="proteins-value fvtypeb">{{this.param.foodValue.proteins}} г</span>
+                </div>
+                <p class="end-text">Значения приблизительные</p>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="wrap">
+                <p class="main-text">{{this.param.body}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8 wrap-ingr">
+            <p class="heading-list">Ингредиенты</p>
+            <p class="heading-description">Что вам пригодиться</p>
+            <div class="ingredients-list" *ngFor="let list of this.param.ingredients; let i = 'index';">
+                <p (click)="status[i] = !status[i]" [ngClass]="status[i] ? 'danger' : 'success'" class="ingredients-item">{{this.param.ingredients[i].title}} {{this.param.ingredients[i].description}}</p>
+            </div>
+        </div>
+        <div class="col-4">
+            <p class="heading-other">Прочие рецепты</p>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <p class="heading-steps">Шаги приготовления</p>
+            <div class="step-div" *ngFor="let step of this.param.cookingSteps; let i = 'index';">
+                <div (click)="statusB[i] = !statusB[i]" [ngClass]="statusB[i] ? 'danger' : 'success'" class="step-divB">
+                    <p class="step-heading">{{i+1}} {{this.param.cookingSteps[i].title}}</p>
+                    <p class="step-description">{{this.param.cookingSteps[i].description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="warp wrap-rec">
+        <div class="row">
+            <p class="heading-like">Возможно вам понравятся эти рецепты</p>
+        <!--<div class="col-3" *ngFor="let listrecipe of this.param; let i = 'index';">
+                <button routerLink="/recipe/{{this.param[i].id}}" type="button" class="recipe">
+                    <img class="recipe-img" src="{{this.param[i].image}}" alt="logo">
+                    <p class="recipe-name">{{this.param[i].title}}</p>
+                    <div class="recipe-info d-flex justify-content-between">
+                        <span class="recipe-time">{{this.param[i].timeCooking}}</span>
+                        <span class="recipe-type">{{this.param[i].tags}}</span>
+                    </div>
+                </button>
+            </div>-->
+        </div>
+    </div>
+    <div class="row">
+        <p class="heading-comment">Комментарии</p>
+        <div class="com" *ngFor="let comments of this.param.comments; let i = 'index';">
+            <img class="com-img" src="{{this.param.comments[i].user.avatar}}" alt="logo">
+            <p class="com-name">{{this.param.comments[i].user.firstName}} {{this.param.comments[i].user.lastName}}</p>
+            <p class="com-data">{{this.param.comments[i].updatedOn.slice(0,16).replace('T',' ')}}</p>
+            <p class="com-text">{{this.param.comments[i].text}}</p>
+    </div>
+</div>
