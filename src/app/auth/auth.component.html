@@ -21,11 +21,16 @@
                         <label class="quick-span"><input type="checkbox" class="quick-check" name="Быстрая сессия" id="">Быстрая сессия</label>
                         <button routerLink="/registration" class="reg">Зарегистрироваться</button>
                     </div>
+<<<<<<< Updated upstream
                     <button [disabled]="username.invalid || password.invalid" (click)="createData()" class="auth">Вход</button>
+=======
+                    <button class="auth" (click="")>Вход</button>
+>>>>>>> Stashed changes
                     <p class="line">Или войти через</p>
                     <button class="auth-github"><img class="auth-github_image" src="../../assets/svg/github.svg" alt=""></button>
                 </div>
             </div>
         </div>
     </div>
+    {{this.param.}}
 </div>
