@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { DataService } from '../services/data.service';
-<<<<<<< Updated upstream
 import { FormsModule } from '@angular/forms';
 import { Store, Select } from '@ngxs/store';
 import { AuthState } from '../../store/auth.state';
 import { AuthUpdate } from '../../store/model/auth.model';
-=======
->>>>>>> Stashed changes
 
 interface authValid {
   username: string | null;
@@ -18,7 +15,6 @@ interface authValid {
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent {
-<<<<<<< Updated upstream
   token!:string;
   data:authValid[] = [
   ]
@@ -50,7 +46,4 @@ export class AuthComponent {
       )}
     })
   }
-=======
-  constructor (private dataService:DataService) {}
->>>>>>> Stashed changes
 }
